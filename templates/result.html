@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCC Probability Result</title>
+</head>
+<body>
+    <!-- Logo at the top -->
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" style="width: 150px; height: auto;">
+    </div>
+
+    <!-- Main heading -->
+    <h1 style="text-align: center;">HCC Probability Result</h1>
+
+    <!-- Displaying the logit(p) score -->
+    <div style="text-align: center; margin-top: 20px;">
+        <p>The logit(p) score is: <strong>{{ logit_p }}</strong></p>
+    </div>
+
+    <!-- Displaying the probability category -->
+    <div style="text-align: center; margin-top: 20px;">
+        <p>{{ risk_category }}</p>
+    </div>
+
+    <!-- "Calculate Again" button -->
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="/" style="text-decoration: none; padding: 10px 20px; background-color: #4CAF50; color: white; border-radius: 5px;">Calculate Again</a>
+    </div>
+
+    <!-- Footer text -->
+    <footer style="text-align: center; margin-top: 50px; font-size: 20px; color: #555;">
+        This tool has been developed by Dr. Ashish Kumar for the INASL.
+    </footer>
+</body>
+</html>
