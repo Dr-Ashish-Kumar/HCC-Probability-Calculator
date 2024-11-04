@@ -6,29 +6,34 @@
     <title>HCC Probability Result</title>
 </head>
 <body>
-    <!-- First Logo at the top -->
-    <div style="text-align: center; margin-top: 20px;">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" style="width: 150px; height: auto;">
+    <div style="text-align: center; display: flex; justify-content: center; gap: 20px; align-items: center; margin-top: 20px;">
+        <img src="{{ url_for('static', filename='new_logo.png') }}" alt="New Logo" style="width: 120px; height: 120px;">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Existing Logo" style="width: 120px; height: 120px;">
     </div>
-
-    <!-- New Logo Below -->
-    <div style="text-align: center; margin-top: 20px;">
-        <img src="{{ url_for('static', filename='new_logo.png') }}" alt="New Logo" style="width: 150px; height: auto;">
-    </div>
-
+        
+    <!-- Main heading -->
     <h1 style="text-align: center;">HCC Probability Result</h1>
 
-    <p style="text-align: center;">The logit(p) score is: {{ logit_score }}</p>
-    <p style="text-align: center;">The patient has a {{ category }} probability of having HCC.</p>
-
-    <!-- Additional Text Below -->
-    <div style="text-align: center; margin-top: 20px; font-size: 20px;">
-        <p>This tool has been developed by Dr. Ashish Kumar for the INASL.</p>
-        <p>Additional text goes here, such as a disclaimer or more information.</p>
-    </div>
-
+    <!-- Displaying the logit(p) score -->
     <div style="text-align: center; margin-top: 20px;">
-        <a href="/" style="text-decoration: none; font-size: 18px;">Calculate Again</a>
+        <p style="font-size: 24px;">The HCC risk score [logit(p) score] is: <strong>{{ logit_p }}</strong></p>
+        <p style="font-size: 18px;">(The HCC risk score [logit(p) score] can range from -4.39 to +4.39.)</p>
     </div>
+    
+    <!-- Displaying the probability category with increased font size -->
+    <div style="text-align: center; margin-top: 20px;">
+        <p style="font-size: 24px;"><strong>{{ risk_category }}</strong></p>
+    </div>
+    
+
+    <!-- "Calculate Again" button -->
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="/" style="text-decoration: none; padding: 10px 20px; background-color: #4CAF50; color: white; border-radius: 5px;">Calculate Again</a>
+    </div>
+
+    <!-- Footer text -->
+    <footer style="text-align: center; margin-top: 50px; font-size: 20px; color: #555;">
+        This tool has been developed by Dr. Ashish Kumar using prospectively collected data from 170 patients at Sir Ganga Ram Hospital. Further validation is needed through multicentric studies across India.
+    </footer>
 </body>
 </html>
