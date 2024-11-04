@@ -30,9 +30,9 @@ def calculate():
         if probability_percentage >= 75:
             risk_category = "The patient has a very high (>75%) probability of having HCC"
         elif 50 <= probability_percentage < 75:
-            risk_category = "The patient has a high (>50-75%) probability of having HCC"
+            risk_category = "The patient has a high (50-75%) probability of having HCC"
         elif 25 <= probability_percentage < 50:
-            risk_category = "The patient has an average (25-50%) probability of having HCC"
+            risk_category = "The patient has a moderate (25-50%) probability of having HCC"
         else:
             risk_category = "The patient has a low (<25%) probability of having HCC"
 
