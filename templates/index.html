@@ -6,28 +6,68 @@
     <title>HCC Probability Calculator</title>
 </head>
 <body>
-    <!-- First Logo at the top -->
-    <div style="text-align: center; margin-top: 20px;">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" style="width: 150px; height: auto;">
+    <div style="text-align: center; display: flex; justify-content: center; gap: 20px; align-items: center; margin-top: 20px;">
+        <img src="{{ url_for('static', filename='new_logo.png') }}" alt="New Logo" style="width: 120px; height: 120px;">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Existing Logo" style="width: 120px; height: 120px;">
     </div>
-
-    <!-- New Logo Below -->
-    <div style="text-align: center; margin-top: 20px;">
-        <img src="{{ url_for('static', filename='new_logo.png') }}" alt="New Logo" style="width: 150px; height: auto;">
-    </div>
-
+        
+    <!-- Main heading -->
     <h1 style="text-align: center;">HCC Probability Calculator</h1>
-
+    
     <!-- Form content -->
-    <form action="/calculate" method="post" style="text-align: center;">
-        <!-- Form fields (Age, Sex, etc.) go here -->
-        <button type="submit">Calculate HCC Probability</button>
+    <form action="/calculate" method="POST" style="text-align: center; margin-top: 20px;">
+        <div style="margin-bottom: 15px;">
+            <label>Age:</label>
+            <select name="age" required>
+                <option value="" disabled selected>Select</option>
+                <option value="1">>60</option>
+                <option value="0">≤60</option>
+            </select>
+        </div>
+    
+        <div style="margin-bottom: 15px;">
+            <label>Sex:</label>
+            <select name="sex" required>
+                <option value="" disabled selected>Select</option>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+        </div>
+    
+        <div style="margin-bottom: 15px;">
+            <label>PIVKA-II:</label>
+            <select name="pivka" required>
+                <option value="" disabled selected>Select</option>
+                <option value="1">>120</option>
+                <option value="0">≤120</option>
+            </select>
+        </div>
+    
+        <div style="margin-bottom: 15px;">
+            <label>AFP:</label>
+            <select name="afp" required>
+                <option value="" disabled selected>Select</option>
+                <option value="1">>20</option>
+                <option value="0">≤20</option>
+            </select>
+        </div>
+    
+        <div style="margin-bottom: 15px;">
+            <label>HBsAg / Anti-HCV Status:</label>
+            <select name="etiology" required>
+                <option value="" disabled selected>Select</option>
+                <option value="1">HBsAg or/& Anti-HCV positive</option>
+                <option value="0">HBsAg and Anti-HCV negative</option>
+            </select>
+        </div>
+    
+        <input type="submit" value="Calculate HCC Probability" style="margin-top: 20px; padding: 10px 20px;">
     </form>
+    
 
-    <!-- Additional Text Below -->
-    <div style="text-align: center; margin-top: 20px;">
-        <p>This tool has been developed by Dr. Ashish Kumar for the INASL.</p>
-        <p>Additional text goes here, providing any more information you'd like to add.</p>
-    </div>
+    <!-- Footer text -->
+    <footer style="text-align: center; margin-top: 50px; font-size: 20px; color: #555;">
+        This tool has been developed by Dr. Ashish Kumar using prospectively collected data from 170 patients at Sir Ganga Ram Hospital. Further validation is needed through multicentric studies across India.
+    </footer>
 </body>
 </html>
