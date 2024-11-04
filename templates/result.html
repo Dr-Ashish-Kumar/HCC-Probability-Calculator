@@ -6,32 +6,29 @@
     <title>HCC Probability Result</title>
 </head>
 <body>
-    <!-- Logo at the top -->
+    <!-- First Logo at the top -->
     <div style="text-align: center; margin-top: 20px;">
         <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" style="width: 150px; height: auto;">
     </div>
 
-    <!-- Main heading -->
+    <!-- New Logo Below -->
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="{{ url_for('static', filename='new_logo.png') }}" alt="New Logo" style="width: 150px; height: auto;">
+    </div>
+
     <h1 style="text-align: center;">HCC Probability Result</h1>
 
-    <!-- Displaying the logit(p) score -->
+    <p style="text-align: center;">The logit(p) score is: {{ logit_score }}</p>
+    <p style="text-align: center;">The patient has a {{ category }} probability of having HCC.</p>
+
+    <!-- Additional Text Below -->
+    <div style="text-align: center; margin-top: 20px; font-size: 20px;">
+        <p>This tool has been developed by Dr. Ashish Kumar for the INASL.</p>
+        <p>Additional text goes here, such as a disclaimer or more information.</p>
+    </div>
+
     <div style="text-align: center; margin-top: 20px;">
-        <p>The logit(p) score is: <strong>{{ logit_p }}</strong></p>
+        <a href="/" style="text-decoration: none; font-size: 18px;">Calculate Again</a>
     </div>
-
-    <!-- Displaying the probability category -->
-    <div style="text-align: center; margin-top: 20px;">
-        <p>{{ risk_category }}</p>
-    </div>
-
-    <!-- "Calculate Again" button -->
-    <div style="text-align: center; margin-top: 30px;">
-        <a href="/" style="text-decoration: none; padding: 10px 20px; background-color: #4CAF50; color: white; border-radius: 5px;">Calculate Again</a>
-    </div>
-
-    <!-- Footer text -->
-    <footer style="text-align: center; margin-top: 50px; font-size: 20px; color: #555;">
-        This tool has been developed by Dr. Ashish Kumar for the INASL.
-    </footer>
 </body>
 </html>
